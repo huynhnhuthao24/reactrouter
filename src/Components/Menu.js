@@ -16,12 +16,22 @@ const menus = [
   {
     name: 'About',
     to:'/about',
-    exact: true
+    exact: false
   },
   {
     name: 'Contact',
     to:'/contact',
-    exact: true
+    exact: false
+  },
+  {
+    name: 'Login',
+    to:'/login',
+    exact: false
+  },
+  {
+    name: 'Product',
+    to:'/products',
+    exact: false
   },
 ]
 
@@ -68,7 +78,6 @@ class Menu extends Component {
     var result = null;
     if(menus.length > 0){
        result = menus.map((menu,index) =>{
-         console.log(menu.name);
          return(
            <MenuLink key={index} to={menu.to} label={menu.name} activeClassName={menu.exact}/>
          )
